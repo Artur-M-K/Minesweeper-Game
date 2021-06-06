@@ -6,6 +6,8 @@ let bombAmount = 10;
 let squares = [];
 let isGameOver = false;
 let flags = 0;
+let flagsArray = [];
+const flag = '<div><i class="fab fa-font-awesome-flag"></i></div>';
 
 //create board
 function createBoard() {
@@ -58,8 +60,14 @@ function createBoard() {
 
         }
     }
-    text.textContent = `Flags left: ${bombAmount - flags}`;
-
+    let flagsLeft = bombAmount - flags;
+    for (let i = 0; i < flagsLeft; i++) {
+        flagsArray.push(flag);
+    }
+    flagsArray.forEach(flag => {
+        document.querySelector('.flags').innerHTML += flag;
+        console.log(flag);
+    })
 }
 
 createBoard();
@@ -70,8 +78,8 @@ function addFlag(square) {
     if (!square.classList.contains('checked') && (flags < bombAmount)) {
         if (!square.classList.contains('flag')) {
             square.classList.add('flag');
-            square.innerHTML = '🚩';
-            square.style.backgroundColor = 'rgba(0,0,0, .5)';
+            square.innerHTML = '<i class="fab fa-font-awesome-flag"></i>'
+            square.style.backgroundColor = '#FA4037';
             square.style.border = '2px inset rgba(0,0,0, .5)'
             flags++;
             checkForWin();
@@ -82,7 +90,19 @@ function addFlag(square) {
             square.innerHTML = '';
             flags--;
         }
-        text.textContent = `Flags left: ${bombAmount - flags}`;
+       
+        let flagsLeft = bombAmount - flags;
+        if (flagsLeft < flagsArray.length) {
+            flagsArray.pop();
+            console.log(flagsLeft);
+        }else if (flagsLeft > flagsArray.length) {
+            flagsArray.push(flag);
+            console.log(flagsLeft);
+            }
+        
+        flagsArray.forEach(flag => {
+        document.querySelector('.flags').innerHTML += flag;
+            })
     }
 }
 
@@ -181,7 +201,7 @@ function gameOver(square) {
     //show all bombs
     squares.forEach(square => {
         if (square.classList.contains('bomb')) {
-            square.innerHTML = '💣';
+            square.innerHTML = '<i class="fas fa-bomb"></i>';
             square.style.border = '1px inset orange';
             square.style.backgroundColor = "rgba(255, 165, 0, .6)";
 
