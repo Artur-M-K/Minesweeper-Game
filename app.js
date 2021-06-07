@@ -1,5 +1,6 @@
 const grid = document.querySelector('.grid');
 const text = document.querySelector('.text h2');
+const result = document.querySelector('.result');
 
 let width = 10;
 let bombAmount = 10;
@@ -57,7 +58,7 @@ function createBoard() {
             if (i < 88 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++;
             if (i <= 89 && squares[i + width].classList.contains('bomb')) total++;
             squares[i].setAttribute('data', total);
-            console.log(squares[i]);
+           
 
         }
     }
@@ -196,7 +197,8 @@ function checkSquare(square, currentId) {
 
 //game over
 function gameOver(square) {
-    console.log("BOOM!!! Game over");
+    result.style.display = 'block';
+    result.innerHTML = 'GAME OVER';
     isGameOver = true;
 
     //show all bombs
@@ -219,7 +221,8 @@ function checkForWin() {
             matches++;
         }
         if (matches === bombAmount) {
-            console.log('YOU WIN!!!');
+            result.style.display = 'block';
+            result.innerHTML = 'YOU WIN!!!';
             isGameOver = true;
         }
     }
