@@ -7,7 +7,8 @@ let squares = [];
 let isGameOver = false;
 let flags = 0;
 let flagsArray = [];
-const flag = '<div><i class="fab fa-font-awesome-flag"></i></div>';
+const flag = '<div class="flagItem"><i class="fab fa-font-awesome-flag"></i></div>';
+const flagDisplay = document.querySelector('.flags');
 
 //create board
 function createBoard() {
@@ -60,13 +61,13 @@ function createBoard() {
 
         }
     }
+    //create flags display
     let flagsLeft = bombAmount - flags;
     for (let i = 0; i < flagsLeft; i++) {
         flagsArray.push(flag);
     }
     flagsArray.forEach(flag => {
         document.querySelector('.flags').innerHTML += flag;
-        console.log(flag);
     })
 }
 
@@ -74,6 +75,7 @@ createBoard();
 
 //add flag with right click
 function addFlag(square) {
+
     if (isGameOver) return;
     if (!square.classList.contains('checked') && (flags < bombAmount)) {
         if (!square.classList.contains('flag')) {
@@ -90,16 +92,15 @@ function addFlag(square) {
             square.innerHTML = '';
             flags--;
         }
-       
+       //display flags 
         let flagsLeft = bombAmount - flags;
         if (flagsLeft < flagsArray.length) {
             flagsArray.pop();
-            console.log(flagsLeft);
+            flagDisplay.innerHTML = '';
         }else if (flagsLeft > flagsArray.length) {
             flagsArray.push(flag);
-            console.log(flagsLeft);
+            flagDisplay.innerHTML = '';
             }
-        
         flagsArray.forEach(flag => {
         document.querySelector('.flags').innerHTML += flag;
             })
