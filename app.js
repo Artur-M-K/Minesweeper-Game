@@ -1,6 +1,7 @@
 const grid = document.querySelector('.grid');
 const text = document.querySelector('.text h2');
 const result = document.querySelector('.result');
+const btn = document.querySelector('.reset');
 
 let width = 10;
 let bombAmount = 10;
@@ -196,9 +197,10 @@ function checkSquare(square, currentId) {
 }
 
 //game over
-function gameOver(square) {
+function gameOver() {
     result.style.display = 'block';
     result.innerHTML = 'GAME OVER';
+    btn.style.display = 'block';
     isGameOver = true;
 
     //show all bombs
@@ -223,7 +225,12 @@ function checkForWin() {
         if (matches === bombAmount) {
             result.style.display = 'block';
             result.innerHTML = 'YOU WIN!!!';
+            btn.style.display = 'block';
             isGameOver = true;
         }
     }
 }
+//reload page and start game again
+btn.addEventListener('click', ()=>{
+    location.reload();
+});
