@@ -114,6 +114,7 @@ div .checked {
     color: white;
     -webkit-box-shadow: 6px 6px 3px 0px rgba(0, 0, 0, 0.9);
     box-shadow: 6px 6px 3px 0px rgba(0, 0, 0, 0.9);
+    
 }
 
 .reset {
