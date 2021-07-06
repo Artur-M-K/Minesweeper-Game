@@ -18,6 +18,8 @@ body {
     margin: 20px auto;
     background: #000;
     font-family: 'Zen Dots', cursive;
+    -webkit-box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.6); 
+    box-shadow: 0px 0px 12px 1px rgba(0,0,0,0.6);
 }
 
 .title {
@@ -77,6 +79,7 @@ div .checked {
     display: flex;
     justify-content: left;
     width: 406px;
+    min-height: 50px;
     margin: 0 auto;
     margin-top: 20px;
     padding: 5px 0px;
