@@ -3,9 +3,9 @@ Minesweeper Game [Live Demo](https://artur-m-k.github.io/Minesweeper-Game/)
 ## General info
 This is a simple version of the Minesweeper game, built in pure JavaScript.
 
-![1](https://user-images.githubusercontent.com/80982136/128228430-8ea7c0d7-5d29-41bb-92e0-2294281d9f6e.jpeg) |
+![1](https://user-images.githubusercontent.com/80982136/128228430-8ea7c0d7-5d29-41bb-92e0-2294281d9f6e.jpeg) 
 ![3](https://user-images.githubusercontent.com/80982136/128228433-5c61d7fe-edf0-40bc-a229-82db838b8480.jpeg)
-![6](https://user-images.githubusercontent.com/80982136/128228434-d8e11348-201d-4c00-805d-4b2b484f72b2.jpeg) |
+![6](https://user-images.githubusercontent.com/80982136/128228434-d8e11348-201d-4c00-805d-4b2b484f72b2.jpeg) 
 ![9](https://user-images.githubusercontent.com/80982136/128228436-24e9bde1-6023-47a6-b0dd-6f33bc54dd65.jpeg)
 	
 ## Technologies
